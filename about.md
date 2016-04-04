@@ -1,15 +1,15 @@
 ---
-layout: page
+layout: article
 title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+![Delirium](/images/delirium.jpg)
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+I am a portuguese software developer currently living in the beautiful garden that is Kent (England).
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+If you are also an afficionado maybe you can tell from the photo that I enjoy belgian beer a lot! The photo was taken at the [Delirium Café](http://www.deliriumcafe.be/?___store=deliriumcafe_en) in Brussels.
+
+My main interests are machine learning and data mining but I also enjoy the foundations of computer science: algorithms and compilers.
+
+
