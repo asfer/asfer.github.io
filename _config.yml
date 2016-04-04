@@ -16,5 +16,9 @@ url: "http://asfer.github.io" # the base hostname & protocol for your site
 twitter_username: asfer6
 github_username:  asfer
 
+collections:
+  patterns:
+    output: true
+
 # Build settings
 markdown: kramdown
