@@ -8,9 +8,8 @@ layout: default
     <h3>Design Patterns</h3>
     {% for article in site.patterns %}
       <li>
-        <a class="post-link" href="{{ article.url | prepend: site.baseurl }}">{{ article.title }}
-          <span class="post-meta">{{ article.date | date: "%b %-d, %Y" }}</span>
-        </a>
+        <a class="post-link" href="{{ article.url | prepend: site.baseurl }}">{{ article.title }}</a>
+        <span class="post-meta">{{ article.date | date: "%b %-d, %Y" }}</span>
       </li>
     {% endfor %}
   </ul>
