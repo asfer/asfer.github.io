@@ -13,9 +13,10 @@ description: > # this means to ignore newlines until "baseurl:"
   "Simplicity is a great virtue but it requires hard work to achieve it and education to appreciate it." – Edsger W. Dijkstra
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://asfer.github.io" # the base hostname & protocol for your site
-twitter_username:  asfer6
-linkedin_username: asfer
-github_username:   asfer
+twitter_username:       asfer6
+linkedin_username:      asfer
+stackoverflow_username: asfer
+github_username:        asfer
 
 collections:
   patterns:
