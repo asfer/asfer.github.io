@@ -5,13 +5,12 @@ layout: default
 <div class="home">
 
   <ul class="post-list">
+    <h3>Design Patterns</h3>
     {% for article in site.patterns %}
       <li>
-        <span class="post-meta">{{ article.date | date: "%b %-d, %Y" }}</span>
-
-        <h3>
-          <a class="post-link" href="{{ article.url | prepend: site.baseurl }}">{{ article.title }}</a>
-        </h3>
+        <a class="post-link" href="{{ article.url | prepend: site.baseurl }}">{{ article.title }}
+          <span class="post-meta">{{ article.date | date: "%b %-d, %Y" }}</span>
+        </a>
       </li>
     {% endfor %}
   </ul>
