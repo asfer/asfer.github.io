@@ -1,0 +1,44 @@
+{{ define "main" }}
+
+<!-- Nav -->
+<nav class="flex items-center justify-between mb-14 text-sm text-zinc-500 dark:text-zinc-600">
+  <a href="/" class="font-serif text-xl text-zinc-950 dark:text-zinc-50 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">{{ .Site.Params.name }}</a>
+  <a href="/posts" class="hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors">posts</a>
+</nav>
+
+<article>
+  <!-- Header -->
+  <header class="mb-10">
+    <div class="flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-600 mb-4">
+      <time>{{ .Date.Format "January 2, 2006" }}</time>
+      {{ with .Params.status }}
+      <span class="px-2 py-0.5 rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-600">
+        {{ . }}
+      </span>
+      {{ end }}
+    </div>
+    <h1 class="font-serif text-3xl text-zinc-950 dark:text-zinc-50 leading-snug">
+      {{ .Title }}
+    </h1>
+  </header>
+
+  <!-- Content -->
+  <div class="prose prose-zinc dark:prose-invert text-[15px] leading-relaxed text-zinc-700 dark:text-zinc-400
+    prose-headings:font-serif prose-headings:font-normal prose-headings:text-zinc-950 dark:prose-headings:text-zinc-50
+    prose-a:underline prose-a:decoration-zinc-300 prose-a:underline-offset-2 prose-a:transition-colors
+    hover:prose-a:decoration-zinc-500
+    prose-code:text-sm prose-code:bg-zinc-200 dark:prose-code:bg-zinc-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+    prose-pre:bg-zinc-200 dark:prose-pre:bg-zinc-800 prose-pre:rounded-lg
+    max-w-none">
+    {{ .Content }}
+  </div>
+</article>
+
+<!-- Back link -->
+<div class="mt-14 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+  <a href="/posts" class="text-sm text-zinc-500 dark:text-zinc-600 hover:text-zinc-700 dark:hover:text-zinc-400 transition-colors">
+    ← all posts
+  </a>
+</div>
+
+{{ end }}

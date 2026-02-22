@@ -1,0 +1,10 @@
+baseURL = "https://asfer.github.io/"
+languageCode = "en-gb"
+title = "André Fernandes"
+
+[params]
+  name = "André Fernandes"
+  role = "Software Engineer"
+  github = "https://github.com/asfer"
+  linkedin = "https://linkedin.com/in/asfer"
+  email = "hello@asfer.dev"

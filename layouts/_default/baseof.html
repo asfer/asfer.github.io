@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-zinc-100 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-300">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ if .IsHome }}{{ .Site.Params.name }}{{ else }}{{ .Title }} — {{ .Site.Params.name }}{{ end }}</title>
+  <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.role }}{{ else }}{{ .Summary }}{{ end }}" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans:  ['"Inter"', 'system-ui', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            mono:  ['"JetBrains Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    * { -webkit-font-smoothing: antialiased; }
+
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    h1, h2, h3, .font-serif { font-family: 'Instrument Serif', Georgia, serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; }
+
+    /* Prose link styles */
+    .prose a {
+      text-decoration: underline;
+      text-decoration-color: #a1a1aa; /* zinc-400 */
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.15s;
+    }
+    .prose a:hover { text-decoration-color: #52525b; } /* zinc-600 */
+
+    .dark .prose a { text-decoration-color: #3f3f46; } /* zinc-700 */
+    .dark .prose a:hover { text-decoration-color: #71717a; } /* zinc-500 */
+
+    main { animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <script>
+    if (localStorage.theme !== 'light') {
+      document.documentElement.classList.add('dark')
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-zinc-100 dark:bg-zinc-950">
+  <main class="max-w-xl mx-auto px-5 py-16 sm:py-24">
+
+    {{ block "main" . }}{{ end }}
+
+    <footer class="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-end text-sm text-zinc-400 dark:text-zinc-600">
+      <button
+        onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'"
+        class="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+        aria-label="Toggle dark mode"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark:hidden"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </footer>
+
+  </main>
+</body>
+</html>
